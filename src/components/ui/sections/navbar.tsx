@@ -1,4 +1,3 @@
-
 // import { useIsMobile } from "@/hooks/use-mobile"
 
 import { Link } from "react-router-dom";
@@ -57,14 +56,14 @@ export default function Navbar() {
 
   return (
     <nav className="flex py-3 px-4 justify-between items-center">
-      <div className="logo ">
+      <Link to={"/"} className="logo ">
         {/* Todo:// enchange the alt of this logo in seo format friendly format */}
         <img
           src="/images/logo.png"
           alt="DevKit logo"
           className="h-14 w-36 object-center "
         />
-      </div>
+      </Link>
       <NavigationMenu>
         <NavigationMenuList className="flex-wrap space-x-3">
           {links
@@ -74,7 +73,10 @@ export default function Navbar() {
             .map((item, index) => (
               <NavigationMenuItem key={index}>
                 {/* <NavigationMenuLink> */}
-                <Link to={item.path} className="capitalize hover:font-semibold transition-all">
+                <Link
+                  to={item.path}
+                  className="capitalize hover:font-semibold transition-all"
+                >
                   {item.name}
                 </Link>
                 {/* </NavigationMenuLink> */}
@@ -83,7 +85,7 @@ export default function Navbar() {
         </NavigationMenuList>
       </NavigationMenu>
       <div className="auth-btn">
-        <Button>Try for free</Button>
+        <Button className="bg-gradient cursor-pointer hover:scale-105 transition-all">Try for free</Button>
       </div>
     </nav>
   );
