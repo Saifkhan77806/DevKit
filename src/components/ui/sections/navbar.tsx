@@ -6,8 +6,8 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
 } from "../navigation-menu";
-import { Button } from "../button";
 import Gradientbtn from "../../blocks/Gradientbtn";
+import { useScrolled } from "../../../hooks/useScrolled";
 
 const links = [
   {
@@ -54,9 +54,14 @@ const links = [
 
 export default function Navbar() {
   const isLoggedin = true;
+  const isScrolled = useScrolled();
 
   return (
-    <nav className="flex py-3 px-4 justify-between items-center fixed w-full top-0 shadow-sm">
+    <nav
+      className={`flex py-3 px-4 justify-between items-center fixed w-full bg-white z-50 top-0 ${
+        isScrolled && "shadow-sm"
+      } `}
+    >
       <Link to={"/"} className="logo ">
         {/* Todo:// enchange the alt of this logo in seo format friendly format */}
         <img
@@ -86,9 +91,7 @@ export default function Navbar() {
         </NavigationMenuList>
       </NavigationMenu>
       <div className="auth-btn">
-    <Gradientbtn>
-      Try for free
-    </Gradientbtn>
+        <Gradientbtn>Try for free</Gradientbtn>
       </div>
     </nav>
   );

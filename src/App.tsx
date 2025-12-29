@@ -1,14 +1,14 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/ui/sections/navbar";
-import Hero from "./components/sections/Hero";
+import Landing from "./components/pages/Landing";
 
 function App() {
   return (
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Hero />} />
+        <Route path="/" element={<Landing />} />
       </Routes>
     </>
   );
