@@ -7,6 +7,7 @@ import {
   NavigationMenuList,
 } from "../navigation-menu";
 import { Button } from "../button";
+import Gradientbtn from "../../blocks/Gradientbtn";
 
 const links = [
   {
@@ -55,7 +56,7 @@ export default function Navbar() {
   const isLoggedin = true;
 
   return (
-    <nav className="flex py-3 px-4 justify-between items-center">
+    <nav className="flex py-3 px-4 justify-between items-center fixed w-full top-0 shadow-sm">
       <Link to={"/"} className="logo ">
         {/* Todo:// enchange the alt of this logo in seo format friendly format */}
         <img
@@ -85,7 +86,9 @@ export default function Navbar() {
         </NavigationMenuList>
       </NavigationMenu>
       <div className="auth-btn">
-        <Button className="bg-gradient cursor-pointer hover:scale-105 transition-all">Try for free</Button>
+    <Gradientbtn>
+      Try for free
+    </Gradientbtn>
       </div>
     </nav>
   );
