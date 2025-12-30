@@ -1,5 +1,6 @@
 import ComparisonSection from "../sections/ComparisonSection";
 import ContactUs from "../sections/ContactUs";
+import Footer from "../sections/Footer";
 import Hero from "../sections/Hero";
 import HowtoUse from "../sections/HowtoUse";
 import Problems from "../sections/Problems";
@@ -14,6 +15,7 @@ const Landing = () => {
       <HowtoUse />
       <ComparisonSection />
       <ContactUs />
+      <Footer />
     </>
   );
 };
