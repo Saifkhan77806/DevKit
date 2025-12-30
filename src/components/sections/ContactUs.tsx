@@ -33,20 +33,20 @@ const ContactUs = () => {
 
   return (
     <section className="min-h-screen pb-20 poppins">
-      <div className="flex px-6 gap-x-10 items-center max-w-7xl mx-auto">
+      <div className="flex flex-col min-[940px]:flex-row px-6 gap-x-10 items-center max-w-7xl mx-auto">
         {/* Header */}
-        <div>
+        <div className="flex-1">
           <div className="w-96 h-80 my-7 flex-1 relative">
             <img src="/images/landing/contactus.jpg" alt="" />
             <Overlay />
           </div>
-          <div className="my-14 text-left">
-            <h1 className="text-4xl font-semibold text-neutral-900 dark:text-white">
+          <div className="my-14 px-6 text-left">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-neutral-900 dark:text-white">
               We're Here to Help -
               <br />
               Let's Connect
             </h1>
-            <p className="mx-auto mt-4 max-w-lg">
+            <p className="max-lg:mx-auto mt-4 max-w-lg">
               Whether you're exploring APIs for the first time or already part
               of our community, this is the place to get in touch.
             </p>

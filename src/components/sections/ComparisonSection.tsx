@@ -10,10 +10,10 @@ export default function ComparisonSection() {
       <div className="mx-auto max-w-6xl px-6">
         {/* Heading */}
         <div className="mb-12 space-y-3 text-center">
-          <h2 className="font-bold text-5xl text-neutral-900 dark:text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
             Choosing the Right Backend Approach
           </h2>
-          <p className="mt-3 italic text-gray-700  dark:text-neutral-400">
+          <p className="italic text-gray-700 max-w-2xl mx-auto">
             Different approaches solve different problems. Here’s how DevKit
             compares.
           </p>

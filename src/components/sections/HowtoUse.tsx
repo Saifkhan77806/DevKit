@@ -1,79 +1,94 @@
 import { Timeline } from "../ui/timeline";
 
+const StepContent = ({
+  image,
+  alt,
+  text,
+}: {
+  image: string;
+  alt: string;
+  text: string;
+}) => {
+  return (
+    <div
+      className="
+      flex flex-col md:flex-row-reverse
+      items-center md:items-start
+      gap-6 md:gap-10
+    "
+    >
+      {/* Image */}
+      <img
+        src={image}
+        alt={alt}
+        className="
+          w-full max-w-xs sm:max-w-sm
+          rounded-lg
+          md:-mt-10
+        "
+      />
+
+      {/* Text */}
+      <p
+        className="
+        text-base sm:text-lg lg:text-xl
+        font-semibold
+        text-neutral-700 dark:text-neutral-300
+        text-center md:text-left
+        max-w-md
+      "
+      >
+        {text}
+      </p>
+    </div>
+  );
+};
+
 const HowtoUse = () => {
   const data = [
     {
       title: "Connect",
       content: (
-        <div className="space-y-3 flex flex-row-reverse justify-between">
-          <img
-            src="/images/landing/problem-1.jpg"
-            alt="Connect MongoDB"
-            className="size-72 rounded-lg -mt-10"
-          />
-          <p className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">
-            Securely connect your own MongoDB database using encrypted
-            credentials. You retain full data ownership at all times.
-          </p>
-        </div>
+        <StepContent
+          image="/images/landing/problem-1.jpg"
+          alt="Connect MongoDB"
+          text="Securely connect your own MongoDB database using encrypted credentials. You retain full data ownership at all times."
+        />
       ),
     },
     {
       title: "Design",
       content: (
-        <div className="space-y-3 flex justify-between flex-row-reverse">
-          <img
-            src="/images/landing/problem-1.jpg"
-            alt="Design schema"
-            className="size-72 -mt-10"
-          />
-          <p className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">
-            Define collections and schema rules visually to enforce validation
-            and query safety automatically.
-          </p>
-        </div>
+        <StepContent
+          image="/images/landing/problem-1.jpg"
+          alt="Design schema"
+          text="Define collections and schema rules visually to enforce validation and query safety automatically."
+        />
       ),
     },
     {
       title: "Generate",
       content: (
-        <div className="space-y-3 flex flex-row-reverse">
-          <img
-            src="/images/landing/problem-1.jpg"
-            alt="Generate APIs"
-            className="size-72 rounded-lg -mt-10"
-          />
-          <p className="text-xl text-neutral-700 font-semibold dark:text-neutral-300">
-            Instantly generate REST APIs and SDKs without writing repetitive
-            backend logic.
-          </p>
-        </div>
+        <StepContent
+          image="/images/landing/problem-1.jpg"
+          alt="Generate APIs"
+          text="Instantly generate REST APIs and SDKs without writing repetitive backend logic."
+        />
       ),
     },
     {
       title: "Query",
       content: (
-        <div className="space-y-3 flex gap-x-10 h-96 flex-row-reverse">
-          <img
-            src="/images/landing/problem-1.jpg"
-            alt="Query data"
-            className="size-72 rounded-lg -mt-10"
-          />
-          <p className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">
-            Query data safely from frontend or Node.js using scoped API keys and
-            isolated execution.
-          </p>
-        </div>
+        <StepContent
+          image="/images/landing/problem-1.jpg"
+          alt="Query data"
+          text="Query data safely from frontend or Node.js using scoped API keys and isolated execution."
+        />
       ),
     },
   ];
 
-  return (
-    // <div className="">
-      <Timeline data={data} />
-      
-    // </div>
-  );
+  return <Timeline data={data} />;
 };
 
 export default HowtoUse;

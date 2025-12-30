@@ -13,17 +13,24 @@ const Card = ({
 }) => {
   return (
     <div
-      className={`flex poppins ${
-        index % 2 === 0 ? "flex-row-reverse" : "flex-row"
-      } w-fit mx-auto gap-x-24`}
+      className={`flex flex-col lg:flex-row ${
+        index % 2 === 0 ? "lg:flex-row-reverse" : ""
+      } mx-auto max-w-6xl items-center gap-8 lg:gap-24 px-4`}
     >
-      <div className="size-96 relative">
+      {/* Image */}
+      <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-none lg:w-[420px] aspect-square">
         <Overlay />
-        <img src={image} alt="" className="object-cover size-full" />
+        <img
+          src={image}
+          alt={title}
+          className="h-full w-full object-cover rounded-lg"
+        />
       </div>
-      <div className="my-auto space-y-4">
-        <h1 className="text-4xl font-bold">{title}</h1>
-        <p className="w-3/4 text-gray-800">{subtitle}</p>
+
+      {/* Content */}
+      <div className="space-y-4 text-center lg:text-left">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold">{title}</h2>
+        <p className="text-gray-700 max-w-md mx-auto lg:mx-0">{subtitle}</p>
       </div>
     </div>
   );
@@ -58,25 +65,30 @@ const Problems = () => {
     // },
   ];
   return (
-    <section className="pb-20 poppins">
-      <div className="text-center space-y-3">
-        <h1 className="text-5xl font-bold">
-          Backend Security Is a Time Sink
+    <section className="py-16 lg:py-24 poppins space-y-16">
+      {/* Section Header */}
+      <div className="text-center space-y-3 px-4">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
+          The Hidden Cost of Building Backends
         </h1>
-        <p className="italic text-gray-700">
-          Building authentication, JWT handling, and API security takes weeks
-          and constant maintenance.
+        <p className="italic text-gray-700 max-w-2xl mx-auto">
+          Most teams lose weeks reinventing infrastructure instead of shipping
+          features.
         </p>
       </div>
-      {data.map(({ title, image, subtitle }, index) => (
-        <Card
-          key={index}
-          title={title}
-          subtitle={subtitle}
-          image={image}
-          index={index + 1}
-        />
-      ))}
+
+      {/* Cards */}
+      <div className="">
+        {data.map(({ title, image, subtitle }, index) => (
+          <Card
+            key={index}
+            title={title}
+            subtitle={subtitle}
+            image={image}
+            index={index}
+          />
+        ))}
+      </div>
     </section>
   );
 };

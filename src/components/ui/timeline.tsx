@@ -38,11 +38,12 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       ref={containerRef}
     >
       <div className="max-w-7xl mx-auto pt-20 px-4 md:px-8 lg:px-10 text-center">
-        <h2 className="text-5xl font-bold">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
           From MongoDB to Production APIs — in Minutes
         </h2>
-        <p className="italic text-gray-700">
-         No infrastructure headaches. No lock-in. Just a clean, safe backend layer.
+        <p className="italic text-gray-700 max-w-2xl mx-auto">
+          No infrastructure headaches. No lock-in. Just a clean, safe backend
+          layer.
         </p>
       </div>
 
