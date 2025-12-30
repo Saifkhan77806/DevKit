@@ -7,8 +7,7 @@ const Hero = () => {
     <section className="min-h-screen flex poppins pt-32 pb-20">
       <div className="flex-1 px-16 h-fit self-center space-y-6">
         <h1 className="text-5xl font-semibold leading-14">
-          Bring your own MongoDB. Get safe APIs, SDKs, and schema control —
-          without running a backend.
+          Turn your data into secure APIs instantly
         </h1>
         <p className="text-lg">
           Built for SaaS teams, frontend developers, and startups that want data

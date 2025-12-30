@@ -60,7 +60,7 @@ const Problems = () => {
   return (
     <section className="pb-20 poppins">
       <div className="text-center space-y-3">
-        <h1 className="text-5xl font-semibold">
+        <h1 className="text-5xl font-bold">
           Backend Security Is a Time Sink
         </h1>
         <p className="italic text-gray-700">
