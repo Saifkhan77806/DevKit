@@ -1,8 +1,11 @@
 import Gradientbtn from "../blocks/Gradientbtn";
 import { Button } from "../ui/button";
 import Overlay from "../blocks/Overlay";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="poppins pt-28 pb-20 lg:pb-0">
       <div className="mx-auto max-w-7xl flex flex-col-reverse lg:flex-row items-center gap-12 px-4 sm:px-8 lg:px-12">
@@ -19,7 +22,9 @@ const Hero = () => {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start pt-4">
-            <Gradientbtn>Try for free</Gradientbtn>
+            <Gradientbtn onClick={() => navigate("/signin")}>
+              Try for free
+            </Gradientbtn>
 
             <Button
               variant="outline"

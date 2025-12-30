@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -24,6 +24,7 @@ const links = [
 export default function Navbar() {
   const isLoggedin = true;
   const isScrolled = useScrolled();
+  const navigate = useNavigate();
 
   const filteredLinks = links.filter(
     (item) => item.auth === isLoggedin || item.auth === undefined
@@ -62,7 +63,9 @@ export default function Navbar() {
             </NavigationMenuList>
           </NavigationMenu>
 
-          <Gradientbtn>Try for free</Gradientbtn>
+          <Gradientbtn onClick={() => navigate("/signin")}>
+            Try for free
+          </Gradientbtn>
         </div>
 
         {/* Mobile / Tablet Navigation */}
@@ -91,7 +94,12 @@ export default function Navbar() {
 
                 {/* CTA */}
                 <div className="pt-4 border-t">
-                  <Gradientbtn className="w-full">Try for free</Gradientbtn>
+                  <Gradientbtn
+                    className="w-full"
+                    onClick={() => navigate("signin")}
+                  >
+                    Try for free
+                  </Gradientbtn>
                 </div>
               </div>
             </SheetContent>
