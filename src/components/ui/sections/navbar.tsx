@@ -9,6 +9,7 @@ import { useScrolled } from "../../../hooks/useScrolled";
 import { Menu } from "lucide-react";
 import { Button } from "../button";
 import { Sheet, SheetContent, SheetTrigger } from "../sheet";
+import { Avatar, AvatarFallback, AvatarImage } from "../avatar";
 
 const links = [
   { name: "DevKit", path: "/", auth: undefined },
@@ -63,9 +64,21 @@ export default function Navbar() {
             </NavigationMenuList>
           </NavigationMenu>
 
-          <Gradientbtn onClick={() => navigate("/signin")}>
-            Try for free
-          </Gradientbtn>
+          {isLoggedin ? (
+            <>
+              <Avatar>
+                <AvatarImage
+                  src="https://github.com/shadcn.png"
+                  alt="@shadcn"
+                />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+            </>
+          ) : (
+            <Gradientbtn onClick={() => navigate("/signin")}>
+              Try for free
+            </Gradientbtn>
+          )}
         </div>
 
         {/* Mobile / Tablet Navigation */}

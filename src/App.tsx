@@ -1,18 +1,31 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Navbar from "./components/ui/sections/navbar";
+
 import Landing from "./components/pages/Landing";
 import Login from "./components/pages/Login";
 import Register from "./components/pages/Register";
+import Dashboard from "./components/pages/Dashboard";
+import AuthLayout from "./layout/AuthLayout";
+import DashboardLayout from "./layout/DashboardLayout";
 
 function App() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/signin" element={<Login />} />
-        <Route path="/signup" element={<Register />} />
+        <Route element={<AuthLayout />}>
+          <Route path="/signin" element={<Login />} />
+          <Route path="/" element={<Landing />} />
+          <Route path="/signup" element={<Register />} />
+        </Route>
+
+        <Route element={<DashboardLayout />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/schema" element={<div>Schemas</div>} />
+          <Route path="/apis" element={<div>apis</div>} />
+          <Route path="/settings" element={<div>settings</div>} />
+          <Route path="/project/:id" element={<div>Projects</div>} />
+        </Route>
       </Routes>
     </>
   );

@@ -1,10 +1,8 @@
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
-
-import Section from "../blocks/Section";
 import { Button } from "../ui/button";
 import { cn } from "../../lib/utils";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AuthWrapper from "../blocks/AuthWrapper";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -31,6 +29,7 @@ export const PasswordIcon = ({
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   type formSchemaType = z.infer<typeof loginSchema>;
 
@@ -44,6 +43,7 @@ const Login = () => {
 
   const onSubmit = (data: formSchemaType) => {
     console.log(data);
+    navigate("/dashboard");
   };
 
   return (

@@ -2,7 +2,7 @@ import { useState } from "react";
 import AuthWrapper from "../blocks/AuthWrapper";
 import { Button } from "../ui/button";
 import { PasswordIcon } from "./Login";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerSchema } from "../../schemas/registerSchema";
@@ -12,6 +12,7 @@ import { Spinner } from "../ui/spinner";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   type registerSchemaType = z.infer<typeof registerSchema>;
 
@@ -25,6 +26,7 @@ const Register = () => {
 
   const onSubmit = (data: registerSchemaType) => {
     console.log(data);
+    navigate("/dashboard");
   };
 
   return (
