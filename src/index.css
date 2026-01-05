@@ -128,6 +128,10 @@
     @apply bg-background text-foreground;
   }
 
+  .primary-btn {
+    @apply bg-secondary-my flex justify-center items-center cursor-pointer hover:bg-hard transition-all;
+  }
+
   .bg-gradient {
     background: #2cb4ff;
     background: linear-gradient(
