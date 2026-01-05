@@ -20,11 +20,14 @@ function App() {
         </Route>
 
         <Route element={<DashboardLayout />}>
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard />}>
+            <Route path=":id" element={<div>Project</div>} />
+          </Route>
+
           <Route path="/schema" element={<div>Schemas</div>} />
           <Route path="/apis" element={<div>apis</div>} />
           <Route path="/settings" element={<div>settings</div>} />
-          <Route path="/project/:id" element={<div>Projects</div>} />
+          <Route path="/projects" element={<div>Projects</div>} />
         </Route>
       </Routes>
     </>

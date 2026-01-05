@@ -3,10 +3,12 @@ import {
   Bot,
   ChartBarStackedIcon,
   Frame,
+  Icon,
   Layout,
   Map,
   PieChart,
   PlaneTakeoff,
+  Projector,
   Route,
   Settings2,
   ShoppingBag,
@@ -23,6 +25,7 @@ import { TeamSwitcher } from "./team-switcher";
 import { NavProjects } from "./nav-projects";
 import { NavUser } from "./nav-user";
 import { NavMain } from "./nav-main";
+import { url } from "zod";
 
 // This is sample data.
 const data = {
@@ -43,6 +46,11 @@ const data = {
       url: "/dashboard",
       icon: SquareTerminal,
       isActive: false,
+    },
+    {
+      name: "Projects",
+      url: "/projects",
+      icon: Projector,
     },
     {
       name: "SChema",
